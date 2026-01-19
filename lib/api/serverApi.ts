@@ -52,13 +52,13 @@ export const fetchNotes = async (
 export const checkSession = async (): Promise<AxiosResponse<SessionCheck>> => {
   const cookie = await cookies();
 
-  const responce = await api.get<SessionCheck>('/auth/session', {
+  const response = await api.get<SessionCheck>('/auth/session', {
     headers: {
       Cookie: cookie.toString(),
     },
   });
 
-  return responce;
+  return response;
 };
 
 export const getMe = async (): Promise<User> => {

@@ -34,7 +34,6 @@ export interface Logout {
 }
 
 export interface UpdateUser {
-  email: string;
   username: string;
 }
 
@@ -102,11 +101,8 @@ export const logout = async (): Promise<Logout> => {
   return data;
 };
 
-export const updateMe = async ({
-  email,
-  username,
-}: UpdateUser): Promise<User> => {
-  const { data } = await api.patch<User>('/users/me', { email, username });
+export const updateMe = async ({ username }: UpdateUser): Promise<User> => {
+  const { data } = await api.patch<User>('/users/me', { username });
 
   return data;
 };

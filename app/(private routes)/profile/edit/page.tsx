@@ -10,7 +10,7 @@ export default function EditProfilePage() {
   const { user, setUser } = useAuthStore();
   const router = useRouter();
 
-  const handleCanсel = () => {
+  const handleCancel = () => {
     router.push('/profile');
   };
 
@@ -20,11 +20,8 @@ export default function EditProfilePage() {
       return;
     }
 
-    if (!user) return;
-
     const updatedUserData = {
       username: userName.trim(),
-      email: user.email,
     };
 
     const updatedUser = await updateMe(updatedUserData);
@@ -68,7 +65,7 @@ export default function EditProfilePage() {
             <button
               type='button'
               className={css.cancelButton}
-              onClick={handleCanсel}
+              onClick={handleCancel}
             >
               Cancel
             </button>
