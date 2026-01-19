@@ -15,7 +15,7 @@ export default function AuthNavigation() {
 
     clearIsAuthenticated();
 
-    router.push('/');
+    router.push('/sign-in');
   };
 
   return (

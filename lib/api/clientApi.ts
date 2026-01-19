@@ -70,7 +70,7 @@ export const register = async ({
   email,
   password,
 }: RegisterUser): Promise<User> => {
-  const { data } = await api.post<User>('auth/register', { email, password });
+  const { data } = await api.post<User>('/auth/register', { email, password });
 
   return data;
 };
@@ -85,7 +85,7 @@ export const login = async ({
 };
 
 export const checkSession = async (): Promise<boolean> => {
-  const { data } = await api.get<SessionCheck>('auth/session');
+  const { data } = await api.get<SessionCheck>('/auth/session');
 
   return data.success;
 };
