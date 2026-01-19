@@ -1,5 +1,5 @@
 import css from './NoteForm.module.css';
-import { createNote, type CreateNoteParams } from '@/lib/api';
+import { createNote, type CreateNoteParams } from '@/lib/api/clientApi';
 import { useMutation, useQueryClient } from '@tanstack/react-query';
 import toast, { Toaster } from 'react-hot-toast';
 import { useNoteDraftStore } from '@/lib/store/noteStore';
